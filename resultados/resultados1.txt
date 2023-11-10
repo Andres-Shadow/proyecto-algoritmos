@@ -1,0 +1,12 @@
+Spfa, 1829603800
+Yen, 2964899100
+BellmanFord, 2737938500
+Astar Paralelo, 1888289200
+FloydWarshall, 3103882500
+Dijkstra, 1874406200
+Bfs, 1804167800
+Dijkstra Paralelo, 1806358400
+Ucs, 1939937000
+FloydWarshall Paralelo, 3391688400
+AStar, 1859311100
+Goldberg, 1800450500
