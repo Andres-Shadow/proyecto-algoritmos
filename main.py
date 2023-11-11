@@ -22,14 +22,14 @@ class MainGUI:
         label.grid(row=0, column=0, columnspan=3, pady=(0, 10))
 
         # Botones en la misma línea
-        execute_button = ttk.Button(main_frame, text="Ejecutar todos los algoritmos", command=self.execute_all_algorithms)
+        execute_button = ttk.Button(main_frame, text="Ejecutar En Tiempo Real", command=self.execute_all_algorithms)
         execute_button.grid(row=1, column=0, padx=5)
 
-        info_button = ttk.Button(main_frame, text="Mostrar Información", command=self.show_info)
+        info_button = ttk.Button(main_frame, text="Mostrar Gráfica con el Cuarto Tamaño", command=self.show_info)
         info_button.grid(row=1, column=1, padx=5)
 
         # Nombre del realizador
-        realizador_label = ttk.Label(main_frame, text="Andrés Mauricio Dussán Bastidas \n Luis Fernano Arenas Ramirez", font=("Helvetica", 10, "bold"), anchor='center')
+        realizador_label = ttk.Label(main_frame, text="Andrés Mauricio Dussán Bastidas \nLuis Fernano Arenas Ramirez", font=("Helvetica", 10, "bold"), anchor='center')
         realizador_label.grid(row=3, column=0, pady=(30, 0), sticky=tk.W)
 
     def execute_all_algorithms(self):
@@ -43,10 +43,10 @@ class MainGUI:
             messagebox.showerror("Error", f"Error en la ejecución: {resultado.stderr}")
         else:
             # Mostrar la imagen después de que el comando haya terminado
-            self.show_image("./output_barras.png")
+            self.show_image("./graficas/output_barras1.png")
 
     def show_info(self):
-        self.show_image("./output_barras.png")
+        self.show_image("./graficas/output_barras4.png")
     def show_image(self, image_path):
         try:
             # Cargar la imagen

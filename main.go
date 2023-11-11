@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"os"
 	"proyecto_final_algoritmos/algoritmos"
-	"proyecto_final_algoritmos/graficos"
+	herramientagraficas "proyecto_final_algoritmos/herramientaGraficas"
+
 	"proyecto_final_algoritmos/hilos"
 	"proyecto_final_algoritmos/matrices"
 	"strconv"
@@ -14,14 +15,14 @@ func main() {
 	opcion := os.Args[1]
 	var tam int
 
-	if len(os.Args) < 3 {
+	if len(os.Args) < 3 && opcion != "all" {
 		fmt.Println("1. primer tamaño")
 		fmt.Println("2. segundo tamaño")
 		fmt.Println("3. tercer tamaño")
 		fmt.Println("4. cuarto tamaño")
 		fmt.Print("Seleccione el tamaño de la matriz: ")
 		fmt.Scan(&tam)
-	} else {
+	} else if opcion != "all" {
 		tam, _ = strconv.Atoi(os.Args[2])
 	}
 
@@ -76,8 +77,8 @@ func main() {
 		break
 	case "ui":
 		hilos.LlamarAlgoritmos(tam)
-		graficos.Graficar(tam)
-	case "77":
-		graficos.Graficar(tam)
+		herramientagraficas.Graficar(tam)
+	case "g":
+		herramientagraficas.Graficar(tam)
 	}
 }

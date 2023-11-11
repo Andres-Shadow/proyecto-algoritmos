@@ -1,4 +1,4 @@
-package graficos
+package herramientagraficas
 
 import (
 	"encoding/csv"
@@ -21,18 +21,23 @@ type DataPoint struct {
 
 func Graficar(tam int) {
 	var rutaResultados string
-	switch tam{
+	var nombreGrafica string
+	switch tam {
 	case 1:
 		rutaResultados = "./resultados/resultados1.txt"
+		nombreGrafica = "./graficas/output_barras1.png"
 		break
 	case 2:
 		rutaResultados = "./resultados/resultados2.txt"
+		nombreGrafica = "./graficas/output_barras2.png"
 		break
 	case 3:
 		rutaResultados = "./resultados/resultados3.txt"
+		nombreGrafica = "./graficas/output_barras3.png"
 		break
 	case 4:
 		rutaResultados = "./resultados/resultados4.txt"
+		nombreGrafica = "./graficas/output_barras4.png"
 		break
 	}
 	p := plot.New()
@@ -74,7 +79,7 @@ func Graficar(tam int) {
 	p.Y.Max = maxY
 
 	// Guardar el gráfico en un archivo (formato PNG en este caso)
-	if err := p.Save(4*vg.Inch, 4*vg.Inch, "output_barras.png"); err != nil {
+	if err := p.Save(4*vg.Inch, 4*vg.Inch, nombreGrafica); err != nil {
 		fmt.Println(err)
 		return
 	}
