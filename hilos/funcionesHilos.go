@@ -68,43 +68,54 @@ func LlamarAlgoritmos(tam int) {
 		break
 	}
 
-	var a int
+	var a float64
 	var texto string
+
 	a = algoritmos.LlamarSpfa(tam)
-	texto = "Spfa, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarYen(tam)
-	texto = "Yen, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarBellmanFord(tam)
-	texto = "BellmanFord, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarAStarParalelo(tam)
-	texto = "Astar Paralelo, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarFloydWarshall(tam)
-	texto = "FloydWarshall, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarDijkstra(tam)
-	texto = "Dijkstra, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarBfs(tam)
-	texto = "Bfs, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarDijkstraParalelo(tam)
-	texto = "Dijkstra Paralelo, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarUcs(tam)
-	texto = "Ucs, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarFloydWarshallParalelo(tam)
-	texto = "FloydWarshall Paralelo, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarAStar(tam)
-	texto = "AStar, " + strconv.Itoa(a)
-	matrices.GuardarEnArchivo(texto, nombre)
-	a = algoritmos.LlamarGoldberg(tam)
-	texto = "Goldberg, " + strconv.Itoa(a)
+	texto = "Spfa, " + strconv.FormatFloat(a, 'f', -1, 32)
 	matrices.GuardarEnArchivo(texto, nombre)
 
+	a = algoritmos.LlamarYen(tam)
+	texto = "Yen, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
+
+	a = algoritmos.LlamarBellmanFord(tam)
+	texto = "BellmanFord, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
+
+	a = algoritmos.LlamarAStarParalelo(tam)
+	texto = "Astar Paralelo, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
+
+	a = algoritmos.LlamarFloydWarshall(tam)
+	texto = "FloydWarshall, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
+
+	a = algoritmos.LlamarDijkstra(tam)
+	texto = "Dijkstra, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
+
+	a = algoritmos.LlamarBfs(tam)
+	texto = "Bfs, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
+
+	a = algoritmos.LlamarDijkstraParalelo(tam)
+	texto = "Dijkstra Paralelo, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
+
+	a = algoritmos.LlamarUcs(tam)
+	texto = "Ucs, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
+
+	a = algoritmos.LlamarFloydWarshallParalelo(tam)
+	texto = "FloydWarshall Paralelo, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
+
+	a = algoritmos.LlamarAStar(tam)
+	texto = "AStar, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
+
+	a = algoritmos.LlamarGoldberg(tam)
+	texto = "Goldberg, " + strconv.FormatFloat(a, 'f', -1, 32)
+	matrices.GuardarEnArchivo(texto, nombre)
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"proyecto_final_algoritmos/algoritmos"
+	"proyecto_final_algoritmos/graficos"
 	"proyecto_final_algoritmos/hilos"
 	"proyecto_final_algoritmos/matrices"
 	"strconv"
@@ -65,9 +66,15 @@ func main() {
 		matrices.GenearMatricesPorTamanio(tam)
 		break
 	case "a":
-		 hilos.LlamarAlgoritmos(1)
-		 hilos.LlamarAlgoritmos(2)
-		 hilos.LlamarAlgoritmos(3)
-		 hilos.LlamarAlgoritmos(4)
+		hilos.LlamarAlgoritmos(tam)
+		break
+	case "all":
+		hilos.LlamarAlgoritmos(1)
+		//hilos.LlamarAlgoritmos(2)
+		//hilos.LlamarAlgoritmos(3)
+		//hilos.LlamarAlgoritmos(4)
+
+	case "77":
+		graficos.Graficar()
 	}
 }

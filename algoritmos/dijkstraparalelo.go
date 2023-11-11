@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func LlamarDijkstraParalelo(tam int) int{
+func LlamarDijkstraParalelo(tam int) float64 {
 	startTime := time.Now()
 	var filas int
 	var nombre string
@@ -35,11 +35,10 @@ func LlamarDijkstraParalelo(tam int) int{
 	inicio := 0
 	fin := len(graph) - 1
 
-
 	parallelDijkstra(graph, inicio, fin)
-	elapsedTime := time.Since(startTime)
-	fmt.Println("Tiempo de ejecución:", elapsedTime)
-	return int(elapsedTime)
+	elapsedTime := time.Since(startTime).Seconds() // Convierte la duración a segundos
+	fmt.Printf("Tiempo de ejecución: %.6f segundos\n", elapsedTime)
+	return elapsedTime
 }
 
 // Algoritmo de Dijkstra en paralelo para encontrar la distancia más corta entre dos nodos

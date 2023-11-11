@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func LlamarSpfa(tam int) int{
+func LlamarSpfa(tam int) float64 {
 	startTime := time.Now()
 	var filas int
 	var nombre string
@@ -36,9 +36,9 @@ func LlamarSpfa(tam int) int{
 	fin := len(graph) - 1
 
 	spfa(graph, inicio, fin)
-	elapsedTime := time.Since(startTime)
-	fmt.Println("Tiempo de ejecución:", elapsedTime)
-	return int(elapsedTime)
+	elapsedTime := time.Since(startTime).Seconds() // Convierte la duración a segundos
+	fmt.Printf("Tiempo de ejecución: %.6f segundos\n", elapsedTime)
+	return elapsedTime
 }
 
 func spfa(graph [][]int, origin, destination int) []int {

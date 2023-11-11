@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func LlamarYen(tam int) int{
+func LlamarYen(tam int) float64 {
 	startTime := time.Now()
 	var filas int
 	var nombre string
@@ -36,9 +36,9 @@ func LlamarYen(tam int) int{
 	fin := len(graph) - 1
 
 	yen(graph, inicio, fin)
-	elapsedTime := time.Since(startTime)
-	fmt.Println("Tiempo de ejecución:", elapsedTime)
-	return int(elapsedTime)
+	elapsedTime := time.Since(startTime).Seconds() // Convierte la duración a segundos
+	fmt.Printf("Tiempo de ejecución: %.6f segundos\n", elapsedTime)
+	return elapsedTime
 }
 
 func yen(graph [][]int, origin, destination int) []int {
