@@ -34,16 +34,22 @@ func GenearMatricesPorTamanio(tam int) {
 }
 
 func GenerateRandomMatrix(rows, cols int) [][]int {
-	rand.Seed(time.Now().UnixNano()) // Inicializa la semilla aleatoria con el tiempo actual
+	rand.Seed(time.Now().UnixNano())
 
 	matrix := make([][]int, rows)
 	for i := range matrix {
 		matrix[i] = make([]int, cols)
 		for j := range matrix[i] {
-			// Genera un número aleatorio entre 10000000 y 99999999 (8 dígitos)
-			matrix[i][j] = rand.Intn(1) + 100
+
+			if i == j {
+				matrix[i][j] = 0
+			} else {
+				// Genera un número aleatorio entre 10000000 y 99999999 (8 dígitos)
+				matrix[i][j] = rand.Intn(10000000000000000) + 999999999999999
+			}
 		}
 	}
+
 	return matrix
 }
 
