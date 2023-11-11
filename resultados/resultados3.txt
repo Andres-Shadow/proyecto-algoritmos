@@ -1,0 +1,12 @@
+Spfa, 28.757133
+Yen, 89.941345
+BellmanFord, 90.230415
+Astar Paralelo, 29.41111
+FloydWarshall, 109.30246
+Dijkstra, 28.93112
+Bfs, 28.879671
+Dijkstra Paralelo, 29.5396
+Ucs, 28.679512
+FloydWarshall Paralelo, 107.32644
+AStar, 28.965366
+Goldberg, 29.279924

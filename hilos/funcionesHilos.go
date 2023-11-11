@@ -5,53 +5,6 @@ import (
 	"proyecto_final_algoritmos/matrices"
 	"strconv"
 )
-
-/*
-func LlamarAlgoritmosConcurrentes(tam int) {
-	var wg sync.WaitGroup
-	var mu sync.Mutex // Mutex para proteger el acceso al archivo
-
-	var nombre = "./resultados/resultados1.txt"
-
-	algoritmoConcurrente := func(nombreAlgoritmo string, funcionAlgoritmo func(int) int) {
-		defer wg.Done()
-
-		a := funcionAlgoritmo(tam)
-
-		texto := nombreAlgoritmo + ", " + strconv.Itoa(a)
-
-		// Proteger el acceso al archivo usando el mutex
-		mu.Lock()
-		matrices.GuardarEnArchivo(texto, nombre)
-		mu.Unlock()
-	}
-
-	// Lista de algoritmos a ejecutar concurrentemente
-	algoritmos := map[string]func(int) int{
-		"Spfa":                  algoritmos.LlamarSpfa,
-		"Yen":                   algoritmos.LlamarYen,
-		"BellmanFord":           algoritmos.LlamarBellmanFord,
-		"AstarParalelo":         algoritmos.LlamarAStarParalelo,
-		"FloydWarshall":         algoritmos.LlamarFloydWarshall,
-		"Dijkstra":              algoritmos.LlamarDijkstra,
-		"Bfs":                   algoritmos.LlamarBfs,
-		"DijkstraParalelo":      algoritmos.LlamarDijkstraParalelo,
-		"Ucs":                   algoritmos.LlamarUcs,
-		"FloydWarshallParalelo": algoritmos.LlamarFloydWarshallParalelo,
-		"AStar":                 algoritmos.LlamarAStar,
-		"Goldberg":              algoritmos.LlamarGoldberg,
-	}
-
-	// Iniciar las goroutines
-	for nombreAlgoritmo, funcionAlgoritmo := range algoritmos {
-		wg.Add(1)
-		go algoritmoConcurrente(nombreAlgoritmo, funcionAlgoritmo)
-	}
-
-	// Esperar a que todas las goroutines terminen
-	wg.Wait()
-}*/
-
 func LlamarAlgoritmos(tam int) {
 
 	var nombre = "./resultados/resultados1.txt"
@@ -70,6 +23,8 @@ func LlamarAlgoritmos(tam int) {
 
 	var a float64
 	var texto string
+
+	matrices.EliminarArchivo(nombre)
 
 	a = algoritmos.LlamarSpfa(tam)
 	texto = "Spfa, " + strconv.FormatFloat(a, 'f', -1, 32)

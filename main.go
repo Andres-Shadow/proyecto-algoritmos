@@ -70,11 +70,14 @@ func main() {
 		break
 	case "all":
 		hilos.LlamarAlgoritmos(1)
-		//hilos.LlamarAlgoritmos(2)
-		//hilos.LlamarAlgoritmos(3)
-		//hilos.LlamarAlgoritmos(4)
-
+		hilos.LlamarAlgoritmos(2)
+		hilos.LlamarAlgoritmos(3)
+		hilos.LlamarAlgoritmos(4)
+		break
+	case "ui":
+		hilos.LlamarAlgoritmos(tam)
+		graficos.Graficar(tam)
 	case "77":
-		graficos.Graficar()
+		graficos.Graficar(tam)
 	}
 }

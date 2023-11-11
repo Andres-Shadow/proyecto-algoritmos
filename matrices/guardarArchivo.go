@@ -40,3 +40,12 @@ func GuardarEnArchivo(texto string, nombreArchivo string) error {
 	fmt.Printf("Texto guardado en el archivo %s\n", nombreArchivo)
 	return nil
 }
+
+func EliminarArchivo(ruta string) error {
+	err := os.Remove(ruta)
+	if err != nil {
+		return fmt.Errorf("error al eliminar el archivo %s: %v", ruta, err)
+	}
+	fmt.Printf("Archivo %s eliminado correctamente\n", ruta)
+	return nil
+}

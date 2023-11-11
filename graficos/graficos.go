@@ -19,7 +19,22 @@ type DataPoint struct {
 	Value float64
 }
 
-func Graficar() {
+func Graficar(tam int) {
+	var rutaResultados string
+	switch tam{
+	case 1:
+		rutaResultados = "./resultados/resultados1.txt"
+		break
+	case 2:
+		rutaResultados = "./resultados/resultados2.txt"
+		break
+	case 3:
+		rutaResultados = "./resultados/resultados3.txt"
+		break
+	case 4:
+		rutaResultados = "./resultados/resultados4.txt"
+		break
+	}
 	p := plot.New()
 
 	p.Title.Text = "Rendimiento Algoritmos"
@@ -27,7 +42,7 @@ func Graficar() {
 	p.Y.Label.Text = "Tiempo en Segundos"
 
 	// Leer datos desde un archivo CSV
-	data, err := readCSV("./resultados/resultados1.txt")
+	data, err := readCSV(rutaResultados)
 	if err != nil {
 		fmt.Println(err)
 		return
