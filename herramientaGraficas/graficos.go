@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"image/color"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 
@@ -47,7 +48,7 @@ func Graficar(tam int) {
 	p.Y.Label.Text = "Tiempo en Segundos"
 
 	// Leer datos desde un archivo CSV
-	data, err := readCSV(rutaResultados)
+	data, err := readAndSortCSV(rutaResultados)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -102,8 +103,8 @@ func dataLabels(data []DataPoint) []string {
 	return labels
 }
 
-// Función para leer datos desde un archivo CSV
-func readCSV(filename string) ([]DataPoint, error) {
+// Función para leer datos desde un archivo CSV y ordenarlos
+func readAndSortCSV(filename string) ([]DataPoint, error) {
 	file, err := os.Open(filename)
 	if err != nil {
 		return nil, err
@@ -125,6 +126,11 @@ func readCSV(filename string) ([]DataPoint, error) {
 		}
 		data = append(data, DataPoint{Name: name, Value: value})
 	}
+
+	// Ordenar los datos en forma ascendente según el valor
+	sort.Slice(data, func(i, j int) bool {
+		return data[i].Value < data[j].Value
+	})
 
 	return data, nil
 }
