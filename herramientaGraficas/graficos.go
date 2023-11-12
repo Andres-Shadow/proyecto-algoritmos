@@ -55,11 +55,14 @@ func Graficar(tam int) {
 	}
 
 	// Crear un gráfico de barras
-	bars, _ := plotter.NewBarChart(plotter.Values(dataValues(data)), 0.5)
+	// Calcular el ancho de las barras para que sean cuadradas
+	barWidth := vg.Length(6) // Ancho original de las barras
+	bars, _ := plotter.NewBarChart(plotter.Values(dataValues(data)), barWidth)
+	
 
-	bars.LineStyle.Width = vg.Length(3)
-	bars.Color = color.RGBA{R: 255, G: 0, B: 0, A: 255}
-
+	bars.LineStyle.Width = vg.Length(2)
+	bars.Color = color.RGBA{R: 0, G: 0, B: 200, A: 255}
+	bars.LineStyle.Color = bars.Color
 	// Agregar el gráfico de barras al gráfico
 	p.Add(bars)
 
