@@ -1,12 +1,12 @@
-Spfa, 2.4496064
-Yen, 3.7748065
-BellmanFord, 3.7076864
-Astar Paralelo, 2.432826
-FloydWarshall, 4.1141896
-Dijkstra, 2.3459613
-Bfs, 2.4470406
-Dijkstra Paralelo, 2.3593729
-Ucs, 2.349161
-FloydWarshall Paralelo, 4.870152
-AStar, 2.6003797
-Goldberg, 2.6290152
+Spfa, 116.35807
+Yen, 559.8828
+BellmanFord, 596.28033
+Astar Paralelo, 115.35017
+FloydWarshall, 703.41675
+Dijkstra, 116.47028
+Bfs, 116.859474
+Dijkstra Paralelo, 115.456055
+Ucs, 114.64403
+FloydWarshall Paralelo, 731.2856
+AStar, 117.038185
+Goldberg, 116.85346
